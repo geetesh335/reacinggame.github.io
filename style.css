@@ -1,0 +1,37 @@
+*{
+    margin:0;
+    padding:0;
+}
+.hide{
+    display:none;
+}
+.startScreen{
+    width:122px;
+    height:122px;
+    background-color: red;
+
+}
+.car{
+    width:50px;
+    height:70px;
+    background-color: red;
+    position: absolute;
+    bottom: 50px;
+}
+.gameArea{
+    width:400px;
+    height: 100vh;
+    background-color: #757D75;
+    margin:auto;
+    position: relative;
+    overflow: hidden;
+    
+}
+.line{
+    width:10px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    margin-left:195px;
+    
+}

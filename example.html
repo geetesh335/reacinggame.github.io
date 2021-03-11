@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style media="screen">
+.spinners {
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  overflow: hidden;
+  width: 440px;
+}
+.spinner {
+  flex: 1;
+  transition: .3s;
+  transform: translate(0, -100%);
+}
+.spinner-inner {
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+.spinner-inner:first-child {
+  background: #ccc;
+}
+.spinner-inner:last-child {
+  background: #eee;
+}
+
+.spinner-1-active .spinner-1,
+.spinner-1-active .spinner-2,
+.spinner-1-active .spinner-3,
+.spinner-1-active .spinner-4,
+.spinner-2-active .spinner-2,
+.spinner-2-active .spinner-3,
+.spinner-2-active .spinner-4,
+.spinner-3-active .spinner-3,
+.spinner-3-active .spinner-4,
+.spinner-4-active .spinner-4 {
+  transform: translate(0, 0);
+}
+.spinner-1-active .spinner-2,
+.spinner-2-active .spinner-3,
+.spinner-3-active .spinner-4 {
+  transition-delay: .1s;
+}
+.spinner-1-active .spinner-3,
+.spinner-2-active .spinner-4 {
+  transition-delay: .2s;
+}
+.spinner-1-active .spinner-4 {
+  transition-delay: .3s;
+}
+</style>
+</head>
+<body>
+<div class="spinners">
+  <div class="spinner spinner-1">
+    <div class="spinner-inner">1</div>
+    <div class="spinner-inner">1</div>
+  </div>
+  <div class="spinner spinner-2">
+    <div class="spinner-inner">2</div>
+    <div class="spinner-inner">2</div>
+  </div>
+  <div class="spinner spinner-3">
+    <div class="spinner-inner">3</div>
+    <div class="spinner-inner">3</div>
+  </div>
+  <div class="spinner spinner-4">
+    <div class="spinner-inner">4</div>
+    <div class="spinner-inner">4</div>
+  </div>
+</div>
+<script type="text/javascript">
+var spinners = document.querySelector('.spinners')
+spinners.addEventListener('click', function(event) {
+  var el = event.target.parentNode
+  if (!el.classList.contains('spinner')) return
+
+  spinners.className = 'spinners ' + el.classList[1] + '-active'
+})
+</script>
+</body>
+</html>
